@@ -1,0 +1,1514 @@
+
+/* =========================================
+   BASIC
+========================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #54152f 0%,
+            #260716 45%,
+            #090207 100%
+        );
+
+}
+
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.page {
+
+    position: fixed;
+
+    width: 100%;
+    height: 100vh;
+
+    left: 0;
+    top: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+.page.active {
+
+    display: flex;
+
+    animation: pageAppear 1.2s ease;
+
+}
+
+
+@keyframes pageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(1.04);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+
+/* =========================================
+   TREE INTRO
+========================================= */
+
+#treeIntro {
+
+    background:
+
+        radial-gradient(
+            ellipse at center bottom,
+            #451127 0%,
+            #1b0611 45%,
+            #050105 100%
+        );
+
+}
+
+
+.tree-area {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+/* =========================================
+   TREE TRUNK
+========================================= */
+
+.tree-trunk {
+
+    position: absolute;
+
+    width: 18px;
+
+    height: 300px;
+
+    bottom: 5%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        scaleY(0);
+
+    transform-origin: bottom;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #32120d,
+            #713323,
+            #32120d
+        );
+
+    border-radius: 20px;
+
+    box-shadow:
+
+        0 0 10px #7c3029,
+
+        0 0 25px rgba(255,80,80,0.4);
+
+    animation:
+
+        trunkGrow 2s ease forwards;
+
+}
+
+
+@keyframes trunkGrow {
+
+    to {
+
+        transform:
+            translateX(-50%)
+            scaleY(1);
+
+    }
+
+}
+
+
+
+/* =========================================
+   TREE BRANCHES
+========================================= */
+
+.branch {
+
+    position: absolute;
+
+    height: 12px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #31110d,
+            #6c2b20
+        );
+
+    border-radius: 20px;
+
+    transform-origin: left center;
+
+    opacity: 0;
+
+    animation: branchAppear 1s ease forwards;
+
+}
+
+
+.branch1 {
+
+    width: 150px;
+
+    left: 8px;
+
+    top: 80px;
+
+    transform:
+        rotate(-30deg)
+        scaleX(0);
+
+    animation-delay: 1.3s;
+
+}
+
+
+.branch2 {
+
+    width: 130px;
+
+    left: 0;
+
+    top: 145px;
+
+    transform:
+        rotate(25deg)
+        scaleX(0);
+
+    animation-delay: 1.5s;
+
+}
+
+
+.branch3 {
+
+    width: 130px;
+
+    right: 5px;
+
+    top: 110px;
+
+    transform:
+        rotate(-145deg)
+        scaleX(0);
+
+    animation-delay: 1.7s;
+
+}
+
+
+.branch4 {
+
+    width: 100px;
+
+    right: 5px;
+
+    top: 175px;
+
+    transform:
+        rotate(-205deg)
+        scaleX(0);
+
+    animation-delay: 1.9s;
+
+}
+
+
+@keyframes branchAppear {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            rotate(var(--rotation))
+            scaleX(1);
+
+    }
+
+}
+
+
+
+/* =========================================
+   HEART TREE
+========================================= */
+
+#heartTree {
+
+    position: absolute;
+
+    width: 620px;
+
+    height: 520px;
+
+    left: 50%;
+
+    top: 40%;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+
+/* =========================================
+   TREE HEARTS
+========================================= */
+
+.tree-heart {
+
+    position: absolute;
+
+    opacity: 0;
+
+    color: #ff5d9d;
+
+    text-shadow:
+
+        0 0 5px #ff78ad,
+
+        0 0 12px #ff2d7d,
+
+        0 0 25px rgba(255,30,110,0.7);
+
+    transform:
+
+        translate(-50%, -50%)
+        scale(0);
+
+    animation:
+
+        heartGrow 0.8s
+        ease forwards;
+
+}
+
+
+@keyframes heartGrow {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.3);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+}
+
+
+.tree-heart.glow {
+
+    animation:
+
+        treeHeartPulse
+        2s
+        infinite
+        alternate;
+
+}
+
+
+@keyframes treeHeartPulse {
+
+    from {
+
+        filter: brightness(0.8);
+
+    }
+
+    to {
+
+        filter: brightness(1.5);
+
+    }
+
+}
+
+
+
+/* =========================================
+   TREE TEXT
+========================================= */
+
+.tree-text {
+
+    position: absolute;
+
+    bottom: 7%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 10;
+
+    width: 100%;
+
+}
+
+
+.tree-text p {
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+
+    color: #eab4c8;
+
+    opacity: 0;
+
+    animation:
+
+        textAppear
+        2s
+        ease
+        2s
+        forwards;
+
+}
+
+
+.tree-loading {
+
+    margin-top: 15px;
+
+    font-size: 25px;
+
+    opacity: 0;
+
+    animation:
+
+        loadingAppear
+        1s
+        ease
+        3s
+        forwards;
+
+}
+
+
+@keyframes textAppear {
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes loadingAppear {
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+
+/* =========================================
+   HOME
+========================================= */
+
+#home {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #66183a,
+            #2b0719,
+            #090207
+        );
+
+}
+
+
+.home-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    padding: 20px;
+
+}
+
+
+.small-title {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #ffc3da;
+
+    margin-bottom: 30px;
+
+}
+
+
+.home-heart {
+
+    font-size: 65px;
+
+    animation:
+
+        heartbeat
+        1.5s
+        infinite;
+
+}
+
+
+.home-content h1 {
+
+    font-size:
+        clamp(48px, 8vw, 90px);
+
+    font-weight: normal;
+
+    line-height: 1.05;
+
+    text-shadow:
+
+        0 0 10px #ff6da5,
+
+        0 0 30px #ff267c,
+
+        0 0 60px #ff267c;
+
+}
+
+
+.home-content h1 span {
+
+    display: block;
+
+    color: #ff9fc2;
+
+    font-style: italic;
+
+}
+
+
+.subtitle {
+
+    margin-top: 20px;
+
+    font-size: 19px;
+
+    color: #ffd4e3;
+
+}
+
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.main-button,
+.small-button {
+
+    border: 1px solid
+        rgba(255,255,255,0.35);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ff3d8b,
+            #a30e4d
+        );
+
+    color: white;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    margin-top: 30px;
+
+    font-size: 16px;
+
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(255,50,130,0.6),
+
+        0 0 40px
+        rgba(255,50,130,0.25);
+
+    transition: 0.4s;
+
+}
+
+
+.main-button:hover,
+.small-button:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.05);
+
+}
+
+
+
+/* =========================================
+   MUSIC
+========================================= */
+
+.music-button {
+
+    position: fixed;
+
+    right: 20px;
+
+    top: 20px;
+
+    z-index: 1000;
+
+    background:
+        rgba(255,255,255,0.1);
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.3);
+
+    padding: 10px 16px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message-box {
+
+    max-width: 650px;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+.cake {
+
+    font-size: 100px;
+
+    animation:
+
+        cakeBounce
+        1.3s
+        infinite
+        alternate;
+
+}
+
+
+@keyframes cakeBounce {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+
+    }
+
+    to {
+
+        transform:
+            translateY(-15px)
+            rotate(3deg);
+
+    }
+
+}
+
+
+.message-box h2 {
+
+    font-size:
+        clamp(35px, 6vw, 60px);
+
+    color: #ffabc9;
+
+    text-shadow:
+        0 0 20px #ff2e82;
+
+    margin: 20px 0;
+
+}
+
+
+.message-box p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #ffe3ed;
+
+    margin: 10px auto;
+
+}
+
+
+
+/* =========================================
+   MEMORY
+========================================= */
+
+.memory-wrapper {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+}
+
+
+.memory-title {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #ffc3da;
+
+    margin-bottom: 20px;
+
+}
+
+
+.photo-area {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.photo-card {
+
+    position: relative;
+
+    width: min(450px, 65vw);
+
+    height: min(450px, 65vw);
+
+}
+
+
+.photo-glow {
+
+    position: absolute;
+
+    inset: -15px;
+
+    border-radius: 15px;
+
+    background:
+
+        linear-gradient(
+            45deg,
+            #ff3f8e,
+            transparent,
+            #ff9ac2
+        );
+
+    filter: blur(25px);
+
+    opacity: 0.5;
+
+}
+
+
+.photo-card img {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 3px solid white;
+
+    box-shadow:
+
+        0 0 20px
+        rgba(255,70,150,0.7);
+
+    animation:
+
+        photoAppear
+        0.7s
+        ease;
+
+}
+
+
+@keyframes photoAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.8)
+            rotate(-3deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
+}
+
+
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.arrow {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.4);
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.arrow:hover {
+
+    background:
+        rgba(255,60,140,0.5);
+
+    transform: scale(1.1);
+
+}
+
+
+
+/* =========================================
+   PHOTO TEXT
+========================================= */
+
+#photoCounter {
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: #ffb5d0;
+
+}
+
+
+#photoMessage {
+
+    max-width: 550px;
+
+    margin: 12px auto;
+
+    color: #ffe2ec;
+
+    font-style: italic;
+
+}
+
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+#dots {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+}
+
+
+.dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.3);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.dot.active {
+
+    background: #ff6ca5;
+
+    transform: scale(1.6);
+
+    box-shadow:
+        0 0 10px #ff6ca5;
+
+}
+
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+#final {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #67183a,
+            #290717,
+            #080106
+        );
+
+}
+
+
+.final-content {
+
+    max-width: 700px;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+.final-floating-hearts {
+
+    font-size: 25px;
+
+    animation:
+
+        floating
+        2s
+        infinite
+        alternate;
+
+}
+
+
+.big-heart {
+
+    font-size: 120px;
+
+    margin: 10px;
+
+    animation:
+
+        heartbeat
+        1.2s
+        infinite;
+
+    filter:
+
+        drop-shadow(
+            0 0 20px #ff3f8e
+        )
+
+        drop-shadow(
+            0 0 50px #ff3f8e
+        );
+
+}
+
+
+.final-content h1 {
+
+    font-size:
+        clamp(45px, 8vw, 85px);
+
+    font-weight: normal;
+
+}
+
+
+.final-content h1 span {
+
+    color: #ff9dc2;
+
+    font-style: italic;
+
+}
+
+
+.final-content > p {
+
+    margin-top: 20px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #ffe1eb;
+
+}
+
+
+.final-message {
+
+    margin-top: 30px;
+
+    font-size: 24px;
+
+    color: #ffb5d0;
+
+}
+
+
+.signature {
+
+    margin-top: 25px;
+
+    color: #d89bb4;
+
+    font-style: italic;
+
+}
+
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    animation:
+
+        floatHeart
+        linear
+        forwards;
+
+}
+
+
+@keyframes floatHeart {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* =========================================
+   BALLOONS
+========================================= */
+
+.balloon {
+
+    position: fixed;
+
+    bottom: -100px;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    animation:
+
+        balloonUp
+        linear
+        forwards;
+
+}
+
+
+@keyframes balloonUp {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        transform:
+            translateY(-120vh)
+            rotate(8deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* =========================================
+   SPARKLES
+========================================= */
+
+.sparkle {
+
+    position: fixed;
+
+    z-index: 6;
+
+    pointer-events: none;
+
+    animation:
+
+        sparkleAnimation
+        2s
+        linear
+        forwards;
+
+}
+
+
+@keyframes sparkleAnimation {
+
+    0% {
+
+        opacity: 0;
+
+        transform: scale(0);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.3);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform: scale(0);
+
+    }
+
+}
+
+
+
+/* =========================================
+   GENERAL ANIMATIONS
+========================================= */
+
+@keyframes heartbeat {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    20% {
+
+        transform: scale(1.12);
+
+    }
+
+    40% {
+
+        transform: scale(1);
+
+    }
+
+    60% {
+
+        transform: scale(1.12);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+@keyframes floating {
+
+    from {
+
+        transform:
+            translateY(0);
+
+    }
+
+    to {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+
+    #heartTree {
+
+        width: 350px;
+
+        height: 400px;
+
+    }
+
+
+    .tree-trunk {
+
+        height: 220px;
+
+    }
+
+
+    .tree-text {
+
+        bottom: 5%;
+
+    }
+
+
+    .tree-text p {
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .home-content h1 {
+
+        font-size: 48px;
+
+    }
+
+
+    .small-title {
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .cake {
+
+        font-size: 75px;
+
+    }
+
+
+    .message-box {
+
+        padding: 20px;
+
+    }
+
+
+    .message-box p {
+
+        font-size: 16px;
+
+    }
+
+
+    .photo-area {
+
+        gap: 5px;
+
+    }
+
+
+    .photo-card {
+
+        width: 68vw;
+
+        height: 68vw;
+
+    }
+
+
+    .arrow {
+
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 16px;
+
+    }
+
+
+    #photoMessage {
+
+        padding: 0 20px;
+
+        font-size: 15px;
+
+    }
+
+
+    .big-heart {
+
+        font-size: 90px;
+
+    }
+
+
+    .final-message {
+
+        font-size: 19px;
+
+    }
+
+}

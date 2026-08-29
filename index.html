@@ -1,0 +1,370 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Vai ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         BACKGROUND
+    ================================== -->
+
+    <div id="backgroundEffects"></div>
+
+
+    <!-- =================================
+         HEART TREE INTRO
+    ================================== -->
+
+    <section id="treeIntro"
+             class="page active">
+
+
+        <div class="tree-area">
+
+            <!-- Tree trunk -->
+
+            <div class="tree-trunk">
+
+                <div class="branch branch1"></div>
+
+                <div class="branch branch2"></div>
+
+                <div class="branch branch3"></div>
+
+                <div class="branch branch4"></div>
+
+            </div>
+
+
+            <!-- Hearts are created by JavaScript -->
+
+            <div id="heartTree"></div>
+
+
+            <!-- Tree text -->
+
+            <div class="tree-text">
+
+                <p>
+                    A little surprise for you...
+                </p>
+
+                <div class="tree-loading">
+                    ❤️
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================
+         BIRTHDAY HOME
+    ================================== -->
+
+    <section id="home"
+             class="page">
+
+
+        <div class="home-content">
+
+
+            <div class="small-title">
+
+                ✦ A SPECIAL DAY FOR A SPECIAL PERSON ✦
+
+            </div>
+
+
+            <div class="home-heart">
+
+                ❤️
+
+            </div>
+
+
+            <h1>
+
+                Happy Birthday
+
+                <span>Vai</span>
+
+            </h1>
+
+
+            <p class="subtitle">
+
+                Today is all about you ❤️
+
+            </p>
+
+
+            <button class="main-button"
+                    onclick="startBirthday()">
+
+                🎁 Open Your Surprise
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================
+         BIRTHDAY MESSAGE
+    ================================== -->
+
+    <section id="message"
+             class="page">
+
+
+        <div class="message-box">
+
+
+            <div class="cake">
+
+                🎂
+
+            </div>
+
+
+            <h2>
+
+                Happy Birthday Vai ❤️
+
+            </h2>
+
+
+            <p>
+
+                Today is a beautiful day because
+                it celebrates someone very special.
+
+            </p>
+
+
+            <p>
+
+                May your life always be filled with
+                happiness, laughter, success and
+                beautiful memories.
+
+            </p>
+
+
+            <button class="main-button"
+                    onclick="showMemories()">
+
+                📸 See Your Memories
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================
+         MEMORIES
+    ================================== -->
+
+    <section id="memories"
+             class="page">
+
+
+        <div class="memory-wrapper">
+
+
+            <div class="memory-title">
+
+                ✦ A LITTLE MEMORY ✦
+
+            </div>
+
+
+            <div class="photo-area">
+
+
+                <button class="arrow"
+                        onclick="previousPhoto()">
+
+                    ❮
+
+                </button>
+
+
+                <div class="photo-card">
+
+                    <div class="photo-glow"></div>
+
+                    <img id="memoryPhoto"
+                         src="images/photo1.jpg"
+                         alt="Birthday Memory">
+
+                </div>
+
+
+                <button class="arrow"
+                        onclick="nextPhoto()">
+
+                    ❯
+
+                </button>
+
+
+            </div>
+
+
+            <div id="photoCounter">
+
+                1 / 5
+
+            </div>
+
+
+            <p id="photoMessage">
+
+                A beautiful memory to remember forever ❤️
+
+            </p>
+
+
+            <div id="dots"></div>
+
+
+            <button class="small-button"
+                    onclick="showFinal()">
+
+                💖 One More Surprise
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================
+         FINAL SCREEN
+    ================================== -->
+
+    <section id="final"
+             class="page">
+
+
+        <div class="final-content">
+
+
+            <div class="final-floating-hearts">
+
+                ❤️ &nbsp; 💕 &nbsp; ❤️
+
+            </div>
+
+
+            <div class="big-heart">
+
+                ❤️
+
+            </div>
+
+
+            <h1>
+
+                Happy Birthday
+
+                <span>Vai</span>
+
+            </h1>
+
+
+            <p>
+
+                May every new year of your life
+                bring you more happiness,
+                success and wonderful memories.
+
+            </p>
+
+
+            <div class="final-message">
+
+                🎂 Have an amazing birthday! 🎉
+
+            </div>
+
+
+            <div class="signature">
+
+                With lots of love ❤️
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================
+         MUSIC
+    ================================== -->
+
+    <audio id="birthdayMusic"
+           loop>
+
+        <source src="music/birthday.mp3"
+                type="audio/mpeg">
+
+    </audio>
+
+
+    <!-- MUSIC BUTTON -->
+
+    <button id="musicButton"
+            class="music-button"
+            onclick="toggleMusic()">
+
+        🔇 Music
+
+    </button>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
